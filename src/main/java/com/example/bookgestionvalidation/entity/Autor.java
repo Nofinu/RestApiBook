@@ -20,7 +20,6 @@ public class Autor {
     @Size(max = 50,message = "Invalid Name : name must be shorter then 50 characters")
     private String name;
 
-   //@Pattern(regexp = "^[\\w-.]+@(editor\\.com)",message = "Invalid email : email must be ... @editor.com")
     @Email(regexp = "^[\\w-.]+@(editor\\.com)", message =  "Invalid email : email must be ... @editor.com")
     @NotNull(message = "Invalid email : email null")
     @NotEmpty(message = "Invalid email : email empty")
