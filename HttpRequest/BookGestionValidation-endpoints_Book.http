@@ -3,10 +3,10 @@ POST http://localhost:8080/api/v1/book/add
 Content-Type: application/json
 
 {
-  "title":"title",
-  "autor":2,
-  "category":1,
-  "publicationDate":2020
+  "title":"sfBooks",
+  "autor":4,
+  "category":3,
+  "publicationDate":2022
 }
 ###
 POST http://localhost:8080/api/v1/book/add
@@ -23,6 +23,6 @@ Content-Type: application/json
 GET http://localhost:8080/api/v1/book/1
 
 ###
-POST http://localhost:8080/api/v1/book/add
+GET http://localhost:8080/api/v1/book
 
 

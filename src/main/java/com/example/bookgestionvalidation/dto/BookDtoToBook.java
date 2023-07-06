@@ -26,7 +26,6 @@ public class BookDtoToBook {
         book.setAutor(autorService.findById(bookCreateDto.getAutor()));
         book.setCategory(categoryService.findById(bookCreateDto.getCategory()));
         book.setPublicationDate(bookCreateDto.getPublicationDate());
-
         return book;
     }
 }

@@ -2,6 +2,7 @@ package com.example.bookgestionvalidation.controller;
 
 import com.example.bookgestionvalidation.dto.BookCreateDto;
 import com.example.bookgestionvalidation.dto.BookDtoToBook;
+import com.example.bookgestionvalidation.dto.BookReadDto;
 import com.example.bookgestionvalidation.entity.Book;
 import com.example.bookgestionvalidation.exception.NotFoundException;
 import com.example.bookgestionvalidation.service.BookService;
@@ -21,7 +22,7 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping("/add")
-    public ResponseEntity<Book> addBook(@RequestBody @Valid BookCreateDto bookCreateDto) throws NotFoundException {
+    public ResponseEntity<BookReadDto> addBook(@RequestBody @Valid BookCreateDto bookCreateDto) throws NotFoundException {
         return new ResponseEntity<>(bookService.save(bookCreateDto), HttpStatus.OK);
     }
 
@@ -32,12 +33,12 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Book> findById (@PathVariable Integer id) throws NotFoundException {
-        return new ResponseEntity<>(bookService.findById(id),HttpStatus.OK);
+    public ResponseEntity<BookReadDto> findById (@PathVariable Integer id) throws NotFoundException {
+        return new ResponseEntity<>(bookService.findByIdDto(id),HttpStatus.OK);
     }
 
     @GetMapping("")
-    public ResponseEntity<List<Book>> findAll () {
+    public ResponseEntity<List<BookReadDto>> findAll () {
         return new ResponseEntity<>(bookService.findAll(),HttpStatus.OK);
     }
 }
