@@ -1,0 +1,23 @@
+###
+POST http://localhost:8080/api/v1/autor/add
+Content-Type: application/json
+
+{
+  "name": "toto",
+  "email": "toto@editor.com"
+}
+
+###
+POST http://localhost:8080/api/v1/autor/add
+Content-Type: application/json
+
+{
+  "name": "Lorem ipsum dolor sit amet, consectetur porta ante.",
+  "email": "toto@gmail.com"
+}
+
+###
+GET http://localhost:8080/api/v1/autor/2
+
+###
+GET http://localhost:8080/api/v1/autor
